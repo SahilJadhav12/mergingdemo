@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'Common/customToast.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -20,19 +18,6 @@ class _MyAppState extends State<MyApp> {
     // Always call super.initState() first
     super.initState();
 
-    // Show toast after the first frame is rendered
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      // Check if the widget is still mounted before showing toast
-      if (mounted) {
-        CustomToast.show(
-          context,
-          message: "Hello Toast!",
-          fontSize: 16,
-          textColor: Colors.white,
-          backgroundColor: Colors.blue,
-        );
-      }
-    });
   }
   // This widget is the root of your application.
   @override
@@ -85,13 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      CustomToast.show(
-        context,
-        message: "Hello Toast!",
-        fontSize: 16,
-        textColor: Colors.white,
-        backgroundColor: Colors.blue,
-      );
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
